@@ -67,4 +67,7 @@ curl "http://testflightapp.com/api/builds.json" \
 #echo "done." >> $LOG
 echo "Uploaded to TestFlight"
 
+
+#few changes
+
 done
