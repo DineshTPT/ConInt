@@ -3,14 +3,16 @@
 
 MARKETTING_VERSION="1.0"
 TARGET_SDK="iphoneos6.1"
-PROJECT_BUILDDIR="build/Debug-iphoneos"
 BUILD_HISTORY_DIR="~/Desktop"
 API_TOKEN="68730198beebeebed04363cbf48300cd_OTMzNjI4MjAxMy0wMy0xNSAwOToxNzo0OS4zMjM0OTU"
-TEAM_TOKEN="4b7d84ffb8df9dd918918feae21c98e5_MjIwNDYyMjAxMy0wNS0wOSAxMTo1MDo0NC45NzAzMjYxx"
+TEAM_TOKEN="4b7d84ffb8df9dd918918feae21c98e5_MjIwNDYyMjAxMy0wNS0wOSAxMTo1MDo0NC45NzAzMjY"
 
 for config in $CONFIGURATIONS; do
 PROVISONNING_PROFILE=$(eval echo \$`echo ProvisionFile$config`)
 DEVELOPPER_NAME=$(eval echo \$`echo Codesign$config`)
+
+PROJECT_BUILDDIR="build/${$config}-iphoneos"
+echo PROJECT_BUILDDIR
 
 XCODE_PROJECT_FILE_NAME=$(ls -d *.xcodeproj)
 PROJECT_NAME=$(eval echo $XCODE_PROJECT_FILE_NAME |cut -d'.' -f1)
