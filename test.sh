@@ -35,7 +35,13 @@ exit 1
 fi
 
 app_path=$(ls -d build/$config-iphoneos/*.app)
-/usr/bin/xcrun -sdk iphoneos PackageApplication -v "${app_path}" -o "$(pwd)/${PROJECT_NAME}.ipa" --sign "${DEVELOPPER_NAME}" --embed "$(pwd)/${PROVISONNING_PROFILE}"
+/usr/bin/xcrun -sdk iphoneos PackageApplication -v "${app_path}" -o "$(pwd)/${PROJECT_NAME}.ipa" --sign "${DEVELOPPER_NAME}" --embed "${PROVISONNING_PROFILE}"
+
+#Check if build succeeded
+if [ $? != 0 ]
+then
+exit 1
+fi
 
 #echo -n "Zipping .dSYM for ${PRODUCT_NAME}..." >> $LOG
 echo "Zipping .dSYM for ${PROJECT_NAME}"
@@ -55,12 +61,6 @@ curl "http://testflightapp.com/api/builds.json" \
 -F api_token="${API_TOKEN}" \
 -F team_token="${TEAM_TOKEN}" \
 -F notes="Build uploaded automatically using build script."
-
-if [ $? != 0 ]
-then
-echo "upload failed"
-exit 1
-fi
 
 echo "Build uploaded to TestFlight successfully!"
 
