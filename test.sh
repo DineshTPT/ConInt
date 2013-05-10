@@ -68,6 +68,6 @@ curl "http://testflightapp.com/api/builds.json" \
 echo "Uploaded to TestFlight"
 
 
-#few changes
+#few changes + few more
 
 done
