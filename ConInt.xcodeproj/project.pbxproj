@@ -271,7 +271,7 @@
 		1BCF3EB1173917FD00943512 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 92;
+				CURRENT_PROJECT_VERSION = 93;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConInt/ConInt-Prefix.pch";
 				INFOPLIST_FILE = "ConInt/ConInt-Info.plist";
@@ -284,7 +284,7 @@
 		1BCF3EB2173917FD00943512 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CURRENT_PROJECT_VERSION = 92;
+				CURRENT_PROJECT_VERSION = 93;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ConInt/ConInt-Prefix.pch";
 				INFOPLIST_FILE = "ConInt/ConInt-Info.plist";
